@@ -6,8 +6,8 @@ class Database:
     def __init__(self):
         self.connection = None
         self.connect()
-    
-    def connect(self):
+    #Local connection 
+    """def connect(self):
         try:
             self.connection = mysql.connector.connect(
                 host="localhost",
@@ -21,7 +21,27 @@ class Database:
                 self.create_database()
                 self.create_users_table()
         except Error as e:
-            st.error(f"Error connecting to MySQL: {e}")
+            st.error(f"Error connecting to MySQL: {e}")"""
+    #Global connection
+    def get_database_connection():
+    try:
+        # Use Railway's environment variables
+        conn = psycopg2.connect(
+            host=os.environ.get('DB_HOST'),
+            database=os.environ.get('DB_NAME'),
+            user=os.environ.get('DB_USER'),
+            password=os.environ.get('DB_PASSWORD'),
+            port=os.environ.get('DB_PORT', 5432)
+        )
+        return conn
+    except Exception as e:
+        st.error(f"Database connection failed: {e}")
+        return None
+
+# In your app
+conn = get_database_connection()
+if conn:
+    # Your database operations here
     
     def create_database(self):
         try:
@@ -66,4 +86,5 @@ class Database:
             return False
     
     def get_connection(self):
+
         return self.connection
