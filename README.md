@@ -262,7 +262,6 @@ If you encounter any issues or have questions:
 
 For additional support, please contact the development team.
 
----
 
 ## 🙏 Acknowledgments
 
