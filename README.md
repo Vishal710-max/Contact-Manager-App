@@ -1,6 +1,6 @@
 # 📇 Contact Manager Pro
 
-A professional, secure, and user-friendly contact management application built with Python and Streamlit. This application allows users to manage their personal and professional contacts with ease, featuring a clean interface, robust validation, and secure user authentication.
+A professional, secure, and user-friendly contact management application built with Python and Streamlit. This application allows users to manage their personal and professional contacts with ease, featuring a clean interface, robust validation, and secure user authentication 
 
 ---
 
